@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: OmnidApps
+  repo: skiapp
+  url: https://github.com/OmnidApps/skiapp
+  version: ""
+  versionURL: ""
