@@ -1,0 +1,6 @@
+{{- if and (hasKey .Requirements "repository") (eq .Requirements.repository "bucketrepo") }}
+enabled: false
+{{- else }}
+enabled: true
+{{- end }}
+

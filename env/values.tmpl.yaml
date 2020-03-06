@@ -1,0 +1,13 @@
+tekton:
+{{- if eq .Requirements.webhook "prow" }}
+  enabled: true
+{{- else if eq .Requirements.webhook "lighthouse" }}
+  enabled: true
+{{- else }}
+  enabled: false
+{{- end }}
+
+# Use cert-manager 0.11 CRDs/APIs with Dex
+dex:
+  certs:
+    newApi: true

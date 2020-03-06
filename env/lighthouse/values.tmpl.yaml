@@ -1,0 +1,33 @@
+{{- if eq .Requirements.webhook "lighthouse" }}
+enabled: true
+{{- else }}
+enabled: false
+{{- end }}
+
+hmacToken: "{{ .Parameters.prow.hmacToken }}"
+
+git:
+  kind: {{ .Requirements.cluster.gitKind | default "github" }}
+  name: {{ .Requirements.cluster.gitName | default "github" }}
+  server: {{ .Requirements.cluster.gitServer | default "https://github.com" }}
+
+service:
+  name: hook
+  
+replicaCount: 2
+
+image:
+  repository: gcr.io/jenkinsxio/lighthouse
+
+vault:
+{{- if eq .Requirements.secretStorage "vault" }}
+  enabled: true
+{{- else }}
+  enabled: false
+{{- end }}
+
+clusterName: {{ .Requirements.cluster.clusterName }}
+
+user: "{{ .Parameters.pipelineUser.username }}"
+
+oauthToken: "{{ .Parameters.pipelineUser.token }}"

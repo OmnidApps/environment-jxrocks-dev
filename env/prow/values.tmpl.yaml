@@ -1,0 +1,37 @@
+{{- if eq .Requirements.webhook "prow" }}
+enabled: true
+{{- else }}
+enabled: false
+{{- end }}
+
+hmacToken: "{{ .Parameters.prow.hmacToken }}"
+oauthToken: "{{ .Parameters.pipelineUser.token }}"
+user: "{{ .Parameters.pipelineUser.username }}"
+
+buildnum:
+  enabled: false
+pipelinerunner:
+  enabled: "true"
+  args:
+  - controller
+  - pipelinerunner
+tillerNamespace: ""
+
+sinker:
+  enabled: false
+  replicaCount: 0
+
+build:
+  enabled: false
+
+plank:
+  enabled: false
+
+vault:
+{{- if eq .Requirements.secretStorage "vault" }}
+  enabled: true
+{{- else }}
+  enabled: false
+{{- end }}
+
+clusterName: {{ .Requirements.cluster.clusterName }}
