@@ -1,0 +1,232 @@
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-jzzhn[0m
+{"level":"warn","ts":1583454857.7810152,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583454857.7819548,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-5qc9x[0m
+{"level":"warn","ts":1583454858.8760636,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583454858.8798444,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-git-source-omnidapps-environment-jxrocks-d-wd9xx-m484f[0m
+{"level":"warn","ts":1583454873.0686612,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583454873.4194045,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/OmnidApps/environment-**rocks-dev.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:04a8e7852b6b2b3720869ef47ff27aa9f6a9ae71
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- nerdsvilleceo
+reviewers:
+- nerdsvilleceo
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 35.185.108.129.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+using version 2.0.1231 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1231
+Kubernetes cluster v1.14.10-gke.17
+kubectl            v1.16.0
+helm client        2.14.3
+git                2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 1
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-650746263/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+Waiting to find the external host name of the ingress controller Service in namespace kube-system with name **ing-nginx-ingress-controller
+No domain flag provided so using default 35.185.108.129.nip.io to generate Ingress rules
+defaulting the domain to 35.185.108.129.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 1
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-760359335/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name **rocks found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ********************** [Automatically accepted existing value]
+Pipeline bot Git email address nerdsville@nerdsville.net [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 1
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-383873310/**-auth/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/OmnidApps/environment-**rocks-dev.git
+Validating git repository for production environment at URL https://github.com/OmnidApps/environment-**rocks-production.git
+Using Git provider github at https://github.com
+? Using Git user name: **********************
+? Using organisation: OmnidApps
+Creating repository OmnidApps/environment-**rocks-production
+Git repository OmnidApps/environment-**rocks-production already exists
+Pushed Git repository to https://github.com/OmnidApps/environment-**rocks-production
+
+Validating git repository for staging environment at URL https://github.com/OmnidApps/environment-**rocks-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: **********************
+? Using organisation: OmnidApps
+Creating repository OmnidApps/environment-**rocks-staging
+Git repository OmnidApps/environment-**rocks-staging already exists
+Pushed Git repository to https://github.com/OmnidApps/environment-**rocks-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 1
+Ignoring templates/default-group.yaml
+Ignoring templates/omnidapps-skiapp-sr.yaml
+No requirements file: /tmp/**-helm-apply-295299991/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.35.185.108.129.nip.io
+Updating webhooks for Owner: OmnidApps and Repository: environment-**rocks-dev in git server: https://github.com
+Checking hooks for repository OmnidApps/environment-**rocks-dev with user **********************
+Found matching hook for url http://hook-**.35.185.108.129.nip.io/hook
+Updating GitHub webhook for OmnidApps/environment-**rocks-dev for url http://hook-**.35.185.108.129.nip.io/hook
+Updating webhooks for Owner: OmnidApps and Repository: environment-**rocks-production in git server: https://github.com
+Checking hooks for repository OmnidApps/environment-**rocks-production with user **********************
+Found matching hook for url http://hook-**.35.185.108.129.nip.io/hook
+Updating GitHub webhook for OmnidApps/environment-**rocks-production for url http://hook-**.35.185.108.129.nip.io/hook
+Updating webhooks for Owner: OmnidApps and Repository: environment-**rocks-staging in git server: https://github.com
+Checking hooks for repository OmnidApps/environment-**rocks-staging with user **********************
+Found matching hook for url http://hook-**.35.185.108.129.nip.io/hook
+Updating GitHub webhook for OmnidApps/environment-**rocks-staging for url http://hook-**.35.185.108.129.nip.io/hook
+Updating webhooks for Owner: OmnidApps and Repository: skiapp in git server: https://github.com
+Checking hooks for repository OmnidApps/skiapp with user **********************
+Found matching hook for url http://hook-**.35.185.108.129.nip.io/hook
+Updating GitHub webhook for OmnidApps/skiapp for url http://hook-**.35.185.108.129.nip.io/hook
+
+Showing logs for build [32momnidapps-environment-jxrocks-d-wd9xx-1[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                          STATUS
+crier-6c4944b868-sks6n                       Running
+deck-7f5c64b45d-ldf7r                        Running
+deck-7f5c64b45d-tldvq                        Running
+hook-647f968ffb-fhcvp                        Running
+hook-647f968ffb-qdvzm                        Running
+horologium-9fdcd6b57-xbtzq                   Running
+jenkins-6f7d67c75f-5knl2                     Running
+jenkins-x-chartmuseum-d87cbb789-8jtpb        Running
+jenkins-x-controllerbuild-7c98c69697-5jj66   Running
+jenkins-x-controllerrole-8699d78657-chzjz    Running
+jenkins-x-docker-registry-69d666d455-7cz5q   Running
+jenkins-x-gcactivities-1583451000-5c2cb      Succeeded
+jenkins-x-gcactivities-1583452800-gcnwz      Succeeded
+jenkins-x-gcactivities-1583454600-bn8xl      Succeeded
+jenkins-x-gcpods-1583452800-v6cq7            Succeeded
+jenkins-x-gcpods-1583454600-vqq59            Succeeded
+jenkins-x-gcpreviews-1583452800-96cbn        Succeeded
+jenkins-x-heapster-6c8b894c48-xnzcf          Running
+jenkins-x-nexus-8b8dfd746-wj9nk              Running
+pipeline-7dff794486-mwlwp                    Running
+pipelinerunner-669d98577b-52glc              Running
+tekton-pipelines-controller-666488cbd5-k65hq Running
+tide-6bcf8f9f7f-txbh8                        Running
+Verifying the git config
+Verifying username ********************** at git server github at https://github.com
+Found 1 organisations in git server https://github.com: OmnidApps
+Validated pipeline user ********************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
