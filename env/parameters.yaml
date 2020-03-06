@@ -1,0 +1,10 @@
+adminUser:
+  password: local:jxrocks/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: nerdsville@nerdsville.net
+  token: local:jxrocks/pipelineUser:token
+  username: omnidapps-jenkinsx-bot
+prow:
+  hmacToken: local:jxrocks/prow:hmacToken
