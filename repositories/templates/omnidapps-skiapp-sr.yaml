@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: OmnidApps
+    provider: github
+    repository: skiapp
+  name: omnidapps-skiapp
+spec:
+  description: Imported application for OmnidApps/skiapp
+  httpCloneURL: https://github.com/OmnidApps/skiapp
+  org: OmnidApps
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: skiapp
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/OmnidApps/skiapp
